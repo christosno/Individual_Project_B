@@ -1,0 +1,16 @@
+
+
+1. H απάντηση στο ερώτημα 1 είναι σε μορφή png με τίτλο erd_1.
+2. H απάντηση στο ερώτημα 2 είναι σε μορφή png με τίτλο erb_2 όπως επίσης και στο sql file create_tables.
+3. H απάντηση στο ερώτημα τρία είναι σε μορφή png με τίτλο schema όπως επίσης μπορείτε να το βρείτε και στο  Mysql workbench με τίτλο Private School.
+4. Η απάντηση στο ερώτημά 4 είναι στο φάκελο dummy_data.
+5. Για τα queries έχω φτιάξει procedures και τα scripts που καλούν τα procedures είναι αποθηκευμένα στο mysql workbench Private School. 
+   Επίσης μπορείτε να δείτε τα procedures τους στο φάκελο procedures.txt.
+   Tέλος έχω φτιάξει δύο triggers για να ενημερώνεται αυτόματα ο πίνακας assignments_students_courses τα οποία μπορείτε να τα δείτε στο file triggers.txt
+
+
+* δεν έχω στείλει dummy_data για το assignment_students_courses, ο πίνακας ενημερώνεται αυτόματα από τα triggers τα οποία 
+  δημιουργούνται αυτόματα με το forward engineer από το schema.
+
+  
+* όταν κάνετε import τα data βεβαιωθείτε ότι τα κάνετε με την σωστή σειρά.

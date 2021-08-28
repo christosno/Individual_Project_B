@@ -1,0 +1,169 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `all_assignments`()
+BEGIN
+	SELECT
+		assignment_id,
+		assignment_title,
+		assignment_description,
+		date_of_submision,
+		rate_of_code_mark,
+		100 - rate_of_code_mark AS rate_of_oral_mark
+		FROM assignments
+		ORDER BY date_of_submision;
+END
+
+
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `all_courses`()
+BEGIN
+	SELECT 
+    course_id,
+	course_title,
+    course_description,
+    language,
+    type
+FROM courses
+JOIN languages USING(language_id)
+JOIN course_types 
+	WHERE course_types_type_id = type_id
+;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `all_students`()
+BEGIN
+	SELECT 
+		student_id,
+		first_name,
+		last_name,
+		date_of_birth,
+		sum(tuition_fees) as total_fees
+	FROM students s
+	LEFT JOIN students_courses sc USING(student_id)
+	GROUP BY s.student_id
+	ORDER BY last_name, first_name;
+
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `all_trainers`()
+BEGIN
+	SELECT 
+    trainer_id,
+	first_name,
+    last_name
+FROM trainers
+ORDER BY last_name, first_name;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `assignments_per_course`()
+BEGIN
+	select 
+		course_title,
+		assignment_title,
+		assignment_description,
+		date_of_submision
+	from assignments_courses
+	join assignments using(assignment_id)
+	join courses using(course_id)
+	order by SUBSTRING(course_title, 7, 2), substring(course_title, 5, 2),  substring(course_title, 3, 2), date_of_submision
+	;
+END
+
+
+
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `students_per_course`()
+BEGIN
+	SELECT 
+		course_title,
+		first_name,
+		last_name,
+		tuition_fees
+	FROM students_courses
+	join students USING(student_id)
+	join courses USING(course_id)
+	order by SUBSTRING(course_title, 7, 2), substring(course_title, 5, 2),  substring(course_title, 3, 2), last_name, first_name
+	;
+END
+
+
+
+
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `students_with_more_than_one_courses`()
+BEGIN
+	SELECT 
+		first_name,
+		last_name,
+		count(*) as number_of_courses 
+	FROM private_school.students_courses
+	join students using(student_id)
+	group by student_id
+	having count(*) >= 2
+	order by last_name, first_name
+	;
+END
+
+
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `trainers_per_course`()
+BEGIN
+	select 
+		course_title,
+		first_name,
+		last_name,
+		subject
+	from trainers_courses
+	join trainers using(trainer_id)
+	join courses using(course_id)
+	join subjects using(subject_id)
+	order by SUBSTRING(course_title, 7, 2), substring(course_title, 5, 2),  substring(course_title, 3, 2), last_name, first_name
+;
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `asiignments_per_course_per_student`()
+BEGIN
+	select 
+		course_title,
+        student_id,
+		first_name,
+		last_name,
+		assignment_title,
+		code_mark,
+		oral_mark
+	from assignments_students_courses
+	join assignments using(assignment_id)
+	join courses using(course_id)
+	join students using(student_id)
+	order by SUBSTRING(course_title, 7, 2), substring(course_title, 5, 2),  substring(course_title, 3, 2), last_name, first_name
+	;
+END

@@ -1,0 +1,9 @@
+"course_id";"course_title";"course_description";"language_id";"type_id"
+1;"CB01FTPY";"Python Full Time";1;1
+2;"CB01PTPY";"Python Full Time";1;2
+3;"CB01FTJV";"Java Full Time";2;1
+4;"CB01PTJV";"Java Part Time";2;2
+5;"CB01FTJS";"JavaScript Full Time";3;1
+6;"CB01PTJS";"JavaScript Part Time";3;2
+7;"CB01FTC#";"C# Full Time";4;1
+9;"CB01PTC#";"C# Part Time";4;2
