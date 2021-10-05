@@ -12,4 +12,4 @@ construct them
 the assignment and name the tables as: Students, Trainers, Assignments, 
 Courses 
 4. Populate the tables of the database with enough data 
-5. You need to produce sql queries that output the following:
+5. + You need to produce sql queries that output the following:
