@@ -27,4 +27,7 @@ Courses
     queries
   + makes a connection to the database and inserts input data from the 
     keyboard to the following tables,
+    
+    - students
+    - 
 
