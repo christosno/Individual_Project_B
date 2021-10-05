@@ -5,14 +5,14 @@
 ---
 ---
 ## Following PART A you need to implement the below functionality:
-1. Design the ERD of your system
-2. Identify any other tables you need based on your implementation and 
+- Design the ERD of your system
+- Identify any other tables you need based on your implementation and 
 construct them
-3. Make the schema of a database that can keep data for the main entities of 
+- Make the schema of a database that can keep data for the main entities of 
 the assignment and name the tables as: Students, Trainers, Assignments, 
 Courses 
-4. Populate the tables of the database with enough data 
-5. - You need to produce sql queries that output the following:
+- Populate the tables of the database with enough data 
+- You need to produce sql queries that output the following:
   + A list of all the students
   + A list of all the trainers
   + A list of all the assignments
@@ -22,7 +22,7 @@ Courses
   + All the assignments per course
   + All the assignments per course per student
   + A list of students that belong to more than one courses
- 6. - You also need to produce a small project that 
+- You also need to produce a small project that 
   + makes a connection to the database and executes the above sql 
     queries
   + makes a connection to the database and inserts input data from the 
