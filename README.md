@@ -29,5 +29,10 @@ Courses
     keyboard to the following tables,
     
     - students
-    - 
+    - trainers
+    - assignments
+    - courses
+    - students per course
+    - trainers per course
+    - assignments per student per course
 
